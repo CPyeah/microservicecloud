@@ -1,10 +1,9 @@
-package com.atguigu.myrule;
+package org.cp.myrule;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import com.netflix.loadbalancer.IRule;
-import com.netflix.loadbalancer.RoundRobinRule;
 
 
 /**

@@ -32,10 +32,13 @@ public class DeptController_Consumer {
         return restTemplate.getForObject(REST_URL_PREFIX + "/dept/get/" + id, Dept.class);
     }
 
+    //localhost:80/consumer/dept/list
     @SuppressWarnings("unchecked")
     @RequestMapping(value = "/consumer/dept/list")
     public List<Dept> list() {
-        return restTemplate.getForObject(REST_URL_PREFIX + "/dept/list", List.class);
+        List list = restTemplate.getForObject(REST_URL_PREFIX + "/dept/list", List.class);
+        System.out.println(list);
+        return list;
     }
 
     // 测试@EnableDiscoveryClient,消费端可以调用服务发现
