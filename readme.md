@@ -18,6 +18,8 @@ hosts文件路径：`C:\Windows\System32\drivers\etc`
 127.0.0.1 eureka7003.com
 127.0.0.1 config-3344.com
 ```
+window下  host配置立即生效
+Win+R->cmd->ipconfig /flushdns    
 
 ## 1.2数据库 ##
 
@@ -37,7 +39,7 @@ create database cloudDB03;
 ```sql
 
 
-CREATE TABLE Dept
+CREATE TABLE dept
 (
     deptno INT PRIMARY KEY,
     dname VARCHAR(50),
@@ -46,34 +48,34 @@ CREATE TABLE Dept
 
 ```
 
-为表插入数据,db_source的值根据1,2,3**分别标识**(cloudDB01库对应的是1,cloudDB02库对应的是2)
+为表插入数据,db_source的值根据1,2,3**分别标识**(cloudDB01库对应的是1,cloudDB02库对应的是2,cloudDB03库对应的是3)
 
 ```sql
 -- database 1
 
-INSERT INTO dept (deptno, dname, db_source) VALUES (1, 'Java1y', '1');
-INSERT INTO dept (deptno, dname, db_source) VALUES (2, 'Java2y', '1');
-INSERT INTO dept (deptno, dname, db_source) VALUES (3, 'Java3y', '1');
-INSERT INTO dept (deptno, dname, db_source) VALUES (4, 'Java4y', '1');
-INSERT INTO dept (deptno, dname, db_source) VALUES (5, 'Java5y', '1');
+INSERT INTO dept (deptno, dname, db_source) VALUES (1, 'cp1', '1');
+INSERT INTO dept (deptno, dname, db_source) VALUES (2, 'cp2', '1');
+INSERT INTO dept (deptno, dname, db_source) VALUES (3, 'cp3', '1');
+INSERT INTO dept (deptno, dname, db_source) VALUES (4, 'cp4', '1');
+INSERT INTO dept (deptno, dname, db_source) VALUES (5, 'cp5', '1');
 
 -- database 2
 
 
-INSERT INTO dept (deptno, dname, db_source) VALUES (1, 'Java1y', '2');
-INSERT INTO dept (deptno, dname, db_source) VALUES (2, 'Java2y', '2');
-INSERT INTO dept (deptno, dname, db_source) VALUES (3, 'Java3y', '2');
-INSERT INTO dept (deptno, dname, db_source) VALUES (4, 'Java4y', '2');
-INSERT INTO dept (deptno, dname, db_source) VALUES (5, 'Java5y', '2');
+INSERT INTO dept (deptno, dname, db_source) VALUES (1, 'cp1', '2');
+INSERT INTO dept (deptno, dname, db_source) VALUES (2, 'cp2', '2');
+INSERT INTO dept (deptno, dname, db_source) VALUES (3, 'cp3', '2');
+INSERT INTO dept (deptno, dname, db_source) VALUES (4, 'cp4', '2');
+INSERT INTO dept (deptno, dname, db_source) VALUES (5, 'cp5', '2');
 
 -- database 3
 
 
-INSERT INTO dept (deptno, dname, db_source) VALUES (1, 'Java1y', '3');
-INSERT INTO dept (deptno, dname, db_source) VALUES (2, 'Java2y', '3');
-INSERT INTO dept (deptno, dname, db_source) VALUES (3, 'Java3y', '3');
-INSERT INTO dept (deptno, dname, db_source) VALUES (4, 'Java4y', '3');
-INSERT INTO dept (deptno, dname, db_source) VALUES (5, 'Java5y', '3');
+INSERT INTO dept (deptno, dname, db_source) VALUES (1, 'cp1', '3');
+INSERT INTO dept (deptno, dname, db_source) VALUES (2, 'cp2', '3');
+INSERT INTO dept (deptno, dname, db_source) VALUES (3, 'cp3', '3');
+INSERT INTO dept (deptno, dname, db_source) VALUES (4, 'cp4', '3');
+INSERT INTO dept (deptno, dname, db_source) VALUES (5, 'cp5', '3');
 ```
 
 # 二、模块之间解释 #
@@ -195,7 +197,5 @@ SpringCloud Config 客户端：
 ![](https://i.imgur.com/CgrUIwL.png)
 
 # 最后 #
-
-获取更多**原创文章**，公众号：Java3y
 
 
